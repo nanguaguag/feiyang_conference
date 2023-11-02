@@ -5,7 +5,7 @@ lineNumbers: false
 drawings:
   persist: false
 transition: slide-left
-title: 研发第一次例会
+title: \.\.
 mdc: true
 layout: intro
 ---
@@ -15,15 +15,18 @@ layout: intro
 四川大学飞扬俱乐部
 
 <div class="absolute bottom-10">
-  <span class="font-700">
-    胡宗尧 2023.10.5
+  <span class="font-400">
+    胡宗尧 2023.11.5
   </span>
 </div>
 
 
 ---
+layout: quote
+title: \.
+---
 
-# 目录
+# Part0. 目录
 
 <Toc maxDepth="1"></Toc>
 
@@ -44,7 +47,7 @@ layout: two-cols-header
 
 ## 0. 安装 python 与开发环境推荐
 
-### 安装 python
+### 0.1. 安装 python
 
 python 的安装非常简单，只需要两步：
 
@@ -65,7 +68,7 @@ python 的安装非常简单，只需要两步：
 layout: two-cols-header
 ---
 
-### 开发环境配置
+### 0.2. 开发环境配置
 
 **请不要用Word和Windows的记事本。Word 保存的不是纯文本文件；记事本没有代码高亮，连IDLE都不如**
 
@@ -139,7 +142,7 @@ print("Hello World!")
 layout: default
 ---
 
-## 解释性语言
+## 1.1. 解释性语言
 
 <br>
 
@@ -163,7 +166,7 @@ layout: two-cols-header
 
 ::left::
 
-### 2.0 变量
+### 2.0. 变量
 
 ```python {1-6|7-20}
 >>> a = 100
@@ -211,7 +214,7 @@ SyntaxError: invalid syntax
 
 ---
 
-### 转义字符对照表
+### 2.1. 转义字符对照表
 
 | 转义字符 | 意义                   | ASCII |
 | -------- | ---------------------- | ----- |
@@ -231,7 +234,7 @@ SyntaxError: invalid syntax
 layout: two-cols-header
 ---
 
-### 数据类型
+### 2.2. 数据类型
 
 ::left::
 
@@ -291,24 +294,37 @@ True
 ```
 
 ---
+layout: two-cols-header
+---
 
-### 2.1 输入输出
+### 2.3. 输入输出
 
 <br>
 
-#### 输出
+::left::
+
+#### 2.3.0. 输出
 
 ```python
 print("100+200 =", 100+200)
 # 100+200 = 300
 ```
 
-#### 输入
+> python 中负责输入输出的函数是`print`。注意到我用了一个还没讲到的概念：**函数**。
+
+函数，就像数学里面的函数一样，我扔给它好几个输入，它就用我给的输入做一些事情。
+
+`print()`函数就负责把它获得的所有输入展现在命令行黑框框里。
+
+
+#### 2.3.1. 输入
 
 ```python
 name = input('please enter your name: ')
 print('hello,', name)
 ```
+
+::right::
 
 在命令行中运行：
 
@@ -318,11 +334,26 @@ please enter your name: Michael
 hello, Michael
 ```
 
+**注意一点**，`input()`获取到的永远是**字符串**：
+
+```python
+>>> number=input("请输入数字:")
+请输入数字:1234
+>>> type(number)
+<class 'str'>
+>>> number=int(number)
+>>> number
+1234
+>>> type(number)
+<class 'int'>
+>>>
+```
+
 ---
 layout: two-cols-header
 ---
 
-### 2.2 List（数组）、Tuple（元组）与 Dict（字典）
+### 2.4 List（数组）、Tuple（元组）与 Dict（字典）
 
 ::left::
 
@@ -388,7 +419,7 @@ layout: two-cols-header
 
 ::left::
 
-### 元组(Tuple)
+### 2.4.1. 元组(Tuple)
 
 Tuple 和 List 几乎一样，也是一个有序列表。
 
@@ -407,7 +438,7 @@ tuple_list = (2, 4, 7, 3, 9, 10)
 
 ::right::
 
-### 字典(Dict)
+### 2.4.2. 字典(Dict)
 
 字典以键值对（key-value）的形式存储数据：
 
@@ -439,7 +470,7 @@ KeyError: 'Thomas'
 layout: two-cols-header
 ---
 
-### 2.3. 条件判断
+### 2.5. 条件判断
 
 ::left::
 
@@ -487,7 +518,7 @@ else:
 layout: two-cols-header
 ---
 
-### 2.4. Python 的严格缩进机制
+### 2.6. Python 的严格缩进机制
 
 这两段代码有什么不同？？——Python的缩进非常严格【大坑】。
 
@@ -503,7 +534,7 @@ layout: two-cols-header
 layout: two-cols-header
 ---
 
-### 2.5. 循环
+### 2.7. 循环
 
 ::left::
 
@@ -525,7 +556,7 @@ Tracy
 
 所以`for x in ...`循环就是把每个元素**代入**变量 x，然后执行后面的语句。
 
-> `range(101)`是使用 python 提供的`range()`函数，生成 0-100 的整数序列（0-100 嘛，101 个数）
+> `range(101)`是使用 python 提供的`range()`函数，生成 0-100 的整数序列（0-100 嘛，101 个数），你可以理解为用`range(10)`代替了`[0,1,2,3,4,5,6,7,8,9]`
 
 ::right::
 
@@ -573,7 +604,7 @@ print(sum)
 layout: two-cols-header
 ---
 
-### 3.1 使用函数
+### 3.1. 使用函数
 
 ::left::
 
@@ -622,7 +653,7 @@ TypeError: bad operand type for abs(): 'str'
 layout: two-cols-header
 ---
 
-### 3.2 定义函数
+### 3.2. 定义函数
 
 ::left::
 
@@ -683,14 +714,14 @@ layout: two-cols-header
 
 Python 本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。
 
-### 4.0 用 math 模块
+### 4.0. 用 math 模块
 
 ::left::
 
 游戏中经常需要从一个点移动到另一个点，给出坐标、位移和角度，就可以计算出**新的坐标**：
 
 ```python
-# 导入math包，import就是
+# 导入math包，import就是进口的意思
 import math
 
 def move(x, y, step, angle=0):
@@ -725,7 +756,7 @@ def move(x, y, step, angle=0):
 layout: two-cols-header
 ---
 
-### 4.1 使用 turtle 模块
+### 4.1. 使用 turtle 模块
 
 ::left::
 
@@ -770,7 +801,7 @@ layout: two-cols-header
 
 `Turtle` 包本身只是一个绘图库，但是配合 Python 代码，比如循环、函数等就可以绘制各种复杂的图形：
 
-```python {all|19|13-16}
+```python {all|21|15-18}
 import turtle
 
 def drawStar(x, y):
@@ -804,7 +835,7 @@ turtle.done()
 layout: two-cols-header
 ---
 
-### 4.2 安装第三方模块
+### 4.2. 安装第三方模块
 
 ::left::
 
