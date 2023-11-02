@@ -49,13 +49,13 @@ python 的安装非常简单。
 
 1. 在[官网](https://www.python.org/)下载 python 安装包，安装时一定记得勾选**Add Python 3.8 to PATH**
 
-<img src="/_resources/fefd7e5318b8c576625f4d980d90a3df.png" class="rounded shadow" />
+<img src="/image_resources/fefd7e5318b8c576625f4d980d90a3df.png" class="rounded shadow" />
 
 ::right::
 
 2. 菜单栏里打开命令提示符，输入 python 后回车，如果出现 >>> ，即所谓的「python 解释器」或者「python 交互环境」，则可视为安装成功。
 
-![537d3b776437243645d2cf7c666bc118.png](/_resources/537d3b776437243645d2cf7c666bc118.png)
+![537d3b776437243645d2cf7c666bc118.png](/image_resources/537d3b776437243645d2cf7c666bc118.png)
 
 ---
 layout: default
