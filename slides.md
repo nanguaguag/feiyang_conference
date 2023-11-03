@@ -60,7 +60,7 @@ python 的安装非常简单，只需要两步：
 > 菜单栏里打开命令提示符，输入 python 后回车，如果出现 `>>>` ，即所谓的「**python 解释器**」或者「**python 交互环境**」，则可视为安装成功。
 
 <img border="rounded" src="/image_resources/fefd7e5318b8c576625f4d980d90a3df.png" />
-<img border="rounded" src="/image_resources/537d3b776437243645d2cf7c666bc118.png" />
+<img border="rounded" src="/image_resources/b61fb7381b658d061a328938cbb2c1fe.png" />
 
 </div>
 
@@ -885,9 +885,385 @@ requests-2.31.0 urllib3-2.0.7
 
 ---
 
-# Part2. Git 入门
+# Part2.  Markdown语法指南
 
+***
+
+<br>
+
+## 2.0. Markdown的诞生
+
+<br>
+
+> git每次**只标记改动**，这意味着git更适合处理一行行的文本，比如你有一个1000行的python代码，只改了其中一行，你觉得是记录哪一行改动好呢，还是把整个文件备份一下好？面对二进制文件，比如exe、word、pdf（它们可以理解为只有一行）git只能每次记录文件的所有内容，所以，把word、pdf、exe这些用git托管是很不明智的，会导致版本库体积不可控地增大。
+
+我们常用的文档格式，像word和pdf这些，都是二进制格式，你改一个字，git就会记录整个文件的内容，太浪费资源了。于是，「文本标记语言」就诞生了。常见的文本标记语言有markdown（最流行没有之一）、ASCIIDoc、textile、HTML（超文本标记语言）
+
+HTML比markdown复杂多了，所以叫它超文本标记语言。但不要误会了，不管它有多复杂，它还是一种「**标记语言**」，而不是「**编程语言**」。
+
+---
+
+## 2.1. markdown的优势
+
+<br>
+
+- **通用性**：你写了一篇博客，你可以发布在任何地方：知乎、CSDN、GitHub、简书、Wiki。
+- **专注于文本**：markdown作为纯文本，可以用记事本打开，完全没有阅读障碍。
+- **代码支持**：markdown对代码的显示和排版吊打word，所以程序员都爱用。
+- **简洁易上手**：程序员很喜欢用markdown写文章和博客（比如这篇文章）
+
+---
+layout: two-cols-header
+---
+
+## 2.2 MD标准语法
+
+::left::
+
+### 标题
+
+要创建标题，请在单词或短语前面添加井号 `#`。`#` 的数量代表了标题的级别。（记得在`#`号后加空格）
+
+![5ef286ed84d1ce4375a371b3154a22ac.png](/image_resources/5ef286ed84d1ce4375a371b3154a22ac.png)
+
+::right::
+
+### 强调
+
+- 一个星号或下划线包裹的文本被标记为*斜体*：`*斜体*` 或 `_斜体_`
+- 两个星号或下划线包裹的文本将会**加粗**：`**加粗**` 或 `__加粗__`
+- 三个星号或下划线标记***粗斜体***：`***粗斜体***` 或 `___粗斜体___`
+
+### 引用
+
+```markdown
+> 这是引用的内容
+>> 嵌套引用，嵌套**加粗文本**
+>>>> 嵌套嵌套嵌套引用
+```
+
+> 这是引用的内容
+>> 嵌套引用，嵌套**加粗文本**
+>>> 嵌套嵌套嵌套引用
+
+---
+layout: two-cols-header
+---
+
+::left::
+
+### 列表
+
+```markdown
+1. 有序列表内容
+2. 有序列表内容
+3. 有序列表内容
+```
+
+1\. 有序列表内容
+
+2\. 有序列表内容
+
+3\. 有序列表内容
+
+```markdown
+- 无序列表内容
+  - 二级列表内容
+- 无序列表内容
+- 无序列表内容
+```
+
+- 无序列表内容
+  - 二级列表内容
+- 无序列表内容
+- 无序列表内容
+
+::right::
+
+### 代码
+
+**行内代码：**
+
+```markdown
+我们可以用`list.pop()`删除list的最后一个元素
+```
+
+我们可以用 `list.pop()` 删除list的最后一个元素
+
+**代码块：**
+
+```
+`​``java
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+`​``
+```
+
+```java
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+```
+
+---
+layout: two-cols-header
+---
+
+::left::
+
+### 分割线
+
+3个及3个以上`*`或`-`都可以：
+
+```markdown
+***
+---
+```
+
+***
+
+### 链接
+
+```markdown
+[超链接显示名](超链接地址 "超链接title")
+
+飞扬官网：[四川大学飞扬俱乐部](https://www.fyscu.com "飞扬俱乐部官网")
+
+<https://www.fyscu.com>
+```
+
+飞扬官网：[四川大学飞扬俱乐部](https://www.fyscu.com "飞扬俱乐部官网")
+
+<https://www.fyscu.com>
+
+```markdown
+[四川大学飞扬俱乐部][1]
+
+[1]: https://www.fyscu.com "飞扬"
+```
+
+[hobbit-hole][1]
+
+[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"
+
+::right::
+
+### 图片
+
+- 图片替代文本：**在图片找不到时**显示的文本，可以不填
+- 图片title：当你鼠标悬浮时显示的文本，也可以不填
+
+```markdown
+![图片替代文本](图片链接 "图片title")
+![这是图片](https://www.fyscu.com/img/main/bgp2.jpg "飞扬")
+```
+
+![这是图片](https://www.fyscu.com/img/main/bgp2.jpg "飞扬")
+
+---
+layout: two-cols-header
+---
+
+## 2.3 MD扩展语法
+
+::left::
+
+### 标题
+
+![c44fa3a6c9c8485782596ea9549dbd67.png](/image_resources/c44fa3a6c9c8485782596ea9549dbd67.png)
+
+### 删除线
+
+```markdown
+~~世界是平坦的。~~ 我们现在知道世界是圆的。
+```
+
+~~世界是平坦的。~~ 我们现在知道世界是圆的。
+
+::right::
+
+### 图片链接（就是把图片嵌套到链接里）
+
+```markdown
+[图片](链接)
+[![这是图片](图片链接 "图片title")](链接)
+
+[![这是图片](https://www.fyscu.com/img/main/bgp2.jpg "飞扬")]
+(https://www.fyscu.com)
+```
+
+[![这是图片](https://www.fyscu.com/img/main/bgp2.jpg "飞扬")](https://www.fyscu.com)
+
+---
+layout: two-cols-header
+---
+
+### 表格
+
+::left::
+
+```markdown
+| Syntax      | Description | Description |
+| ----------- | ----------- | ----------- |
+| Header      | Text        | Text        |
+| Paragraph   | Text        | Text        |
+```
+
+<br>
+<br>
+<br>
+
+表格对齐（`---`默认向左对齐）：
+
+```markdown
+|姓名|性别|分数|
+|--|:--:|--:|
+|小明|男|100|
+|小红|女|89|
+|小飞|男|88|
+```
+
+::right::
+
+| Syntax      | Description | Description |
+| ----------- | ----------- | ----------- |
+| Header      | Text        | Text        |
+| Paragraph   | Text        | Text        |
+
+<br>
+
+|姓名|性别|分数|
+|--|:--:|--:|
+|小明|男|100|
+|小红|女|89|
+|小飞|男|88|
+
+---
+
+### 脚注
+
+```markdown
+脚注示例,[^1]，另一个脚注, [^2]
+
+[^1]: 这是一个简单的脚注
+[^2]: 这个脚注带有markdown格式：
+    `行内代码`，**粗体**，*斜体*
+```
+
+脚注示例,[^1]，另一个脚注, [^2]
+
+### $\LaTeX$公式
+
+行内公式：用`$`包裹，可以显示在一行内：
+
+```markdown
+**易见**一元三次方程的求根公式为：$x = \sqrt[3]{\frac{-d}{a} + \sqrt{\left(\frac{-d}{a}\right)^2 + \left(\frac{c}{a}\right)^3}} +
+ \sqrt[3]{\frac{-d}{a} - \sqrt{\left(\frac{-d}{a}\right)^2 + \left(\frac{c}{a}\right)^3}} - \frac{b}{3a}$
+```
+
+**易见**一元三次方程的求根公式为：$x = \sqrt[3]{\frac{-d}{a} + \sqrt{\left(\frac{-d}{a}\right)^2 + \left(\frac{c}{a}\right)^3}} + \sqrt[3]{\frac{-d}{a} - \sqrt{\left(\frac{-d}{a}\right)^2 + \left(\frac{c}{a}\right)^3}} - \frac{b}{3a}$
+
+[^1]: 这是一个简单的脚注
+[^2]: 这个脚注带有markdown格式：
+    `行内代码`，**粗体**，*斜体*
+
+---
+layout: two-cols-header
+---
+
+::left::
+
+### $\LaTeX$ 多行公式
+
+```latex
+$​$
+\begin{align*}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} +
+\mu_0\varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align*}
+$​$
+```
+
+$$
+\begin{align*}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0 \mathbf{J} +
+\mu_0\varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align*}
+$$
+
+::right::
+
+### 任务列表
+
+```
+- [x] 吃饭
+- [ ] 睡觉
+- [ ] 打豆豆
+```
+
+- [ ] 吃饭
+- [ ] 睡觉
+- [ ] 打豆豆
+
+### 流程图
+
+```
+`​``mermaid
+graph LR
+  A-->B
+  B-->C
+  C-->D
+  D-->E
+`​``
+```
+
+```mermaid
+graph LR
+  A-->B
+  B-->C
+  C-->D
+  D-->E
+```
+
+---
+
+## 2.4. Markdown编辑器推荐
+
+<br>
+
+> 推荐阅读：[markdown编辑器测评——下了31个markdown编辑器，我就不信选不出一个好用的](https://zhuanlan.zhihu.com/p/208791140)
+
+markdown编辑器有很多，这里只推荐开源编辑器，这三个最强：
+
+- [Joplin](https://joplinapp.org/)：开源免费、跨平台、功能强大，笔者在用
+- [Obsidian](https://obsidian.md/)：开源免费、跨平台、功能强大，插件生态丰富
+- [Logseq](https://www.logseq.com/)：开源免费、跨平台。没用过，但是功能应该很强大
+- [Markor](https://github.com/gsantner/markor)：开源免费，安卓端最好用
 
 ---
 
 # Part3. GitHub 使用完全教程
+
+
+
+
+
+
+
+
+
+
+
+
+
