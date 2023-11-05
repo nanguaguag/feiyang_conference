@@ -1,4 +1,6 @@
-[toc]
+# 飞扬研发部第一次例会
+
+<!-- [toc]
 
 ## Part1. Python 光速入门
 
@@ -816,7 +818,7 @@ Successfully installed certifi-2023.7.22 charset-normalizer-3.3.1 idna-3.4 reque
 
 。。。好吧没有结果。要知道，没有消息才是最好的消息（）
 
-<!-- #### 4.3. 练手：安装并运行pygame
+#### 4.3. 练手：安装并运行pygame
 
 想要用python写游戏的同学，推荐pygame，以及最详细的pygame教程
 
@@ -824,7 +826,7 @@ Successfully installed certifi-2023.7.22 charset-normalizer-3.3.1 idna-3.4 reque
 
 ```bash
 ~$ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pygame
-``` -->
+```
 
 ## Part2. Markdown语法
 
@@ -840,14 +842,14 @@ markdown语法，可以说就是这类技能的典型代表。
 
 html比markdown复杂多了，所以叫它超文本标记语言。不要误会了，不管它有多复杂，它还是一种「标记语言」，而不是「编程语言」。
 
-<!-- 文本标记语言的本质就是给文本做记号，然后在相对应的解析器中把你做的记号呈现出来，呈现的过程不需要我们操心。比如你随便创建一个`test.html`文件，里面写入
+文本标记语言的本质就是给文本做记号，然后在相对应的解析器中把你做的记号呈现出来，呈现的过程不需要我们操心。比如你随便创建一个`test.html`文件，里面写入
 
 ```html
 这是普通文本
 <h1>Hello, world!</h1>
 ```
 
-保存后拖到浏览器中打开，就能看到一行小小的普通文本和一个大大的hello world了。所以 `<h1></h1>` 就相当于对其中包裹的文本进行了标记，浏览器这个解析器认出了这个标记。html有自带的浏览器进行解析，markdown则需要下载编辑器了。 -->
+保存后拖到浏览器中打开，就能看到一行小小的普通文本和一个大大的hello world了。所以 `<h1></h1>` 就相当于对其中包裹的文本进行了标记，浏览器这个解析器认出了这个标记。html有自带的浏览器进行解析，markdown则需要下载编辑器了。
 
 ### 2.1 markdown有什么优势？
 
@@ -1494,3 +1496,27 @@ https://github.com/search/advanced
 - https://jdhao.github.io/2020/01/12/vim_nvim_history_development/
 - https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories
 - https://docs.github.com/en/get-started/using-github/keyboard-shortcuts
+
+-->
+
+## 作业
+
+1. 注册GitHub账号，star几个仓库
+2. 新建一个仓库，随便提交一些代码上去
+3. 随意挑选一个比较有名的python库，如tkinter/turtle/pyautogui/pygame库，并成功运行网上找的一些示例
+4. 用pip安装Jupyter，并学习如何使用
+
+选做：
+
+1. 用作业#3中的python库自己写一个程序
+2. 把你的程序放到GitHub中长期维护
+3. 进一步深入学习python
+
+以上作业的过程用markdown格式记录下来，发到邮箱<2694536263@qq.com>
+
+
+
+
+
+
+
