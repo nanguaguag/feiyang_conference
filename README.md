@@ -1512,7 +1512,7 @@ https://github.com/search/advanced
 2. 把你的程序放到GitHub中长期维护
 3. 进一步深入学习python
 
-以上作业的过程用markdown格式记录下来，发到邮箱<2694536263@qq.com>
+以上作业的过程用markdown格式记录下来，加上你学习python和git的心得体会，发到邮箱<2694536263@qq.com>
 
 
 
